@@ -21,7 +21,11 @@ const PokemonCard = ({ data }) => {
         hoverable
         onClick={() => console.log(data.name)}
         cover= {
-          <FadeIn height={100}>
+          <FadeIn
+            height={150}
+            duration={300}
+            placeholder={<img src='/images/pokeball.gif' alt='loading' />}
+            >
             {onload => (
               <img
                 alt='pokemon'
