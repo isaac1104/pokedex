@@ -9,6 +9,7 @@ class Pokedex extends Component {
   }
 
   render() {
+    console.log(this.props.selectedPokemonData);
     return (
       <Fragment>
         <SearchForm handleSearch={this.handleSearch.bind(this)} />
@@ -18,4 +19,10 @@ class Pokedex extends Component {
   }
 }
 
-export default connect(null, { filterPokemonData })(Pokedex);
+function mapStateToProps({ selectedPokemonData }) {
+  return {
+    selectedPokemonData
+  }
+}
+
+export default connect(mapStateToProps, { filterPokemonData })(Pokedex);
