@@ -1,5 +1,6 @@
 import React from 'react';
 import { Card, Col } from 'antd';
+import { FadeIn } from 'react-lazyload-fadein';
 const { Meta } = Card;
 
 const PokemonCard = ({ data }) => {
@@ -19,11 +20,16 @@ const PokemonCard = ({ data }) => {
         style={style.card}
         hoverable
         cover= {
-          <img
-            alt='pokemon'
-            src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${data.id}.png`}
-            style={style.image}
-          />
+          <FadeIn height={150}>
+            {onload => (
+              <img
+                alt='pokemon'
+                src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${data.id}.png`}
+                style={style.image}
+                onLoad={onload}
+              />
+            )}
+          </FadeIn>
         }
         >
         <Meta
