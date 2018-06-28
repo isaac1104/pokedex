@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, Col } from 'antd';
 const { Meta } = Card;
 
-const PokemonCard = props => {
+const PokemonCard = ({ data }) => {
   const style = {
     card: {
       textAlign: 'center'
@@ -21,13 +21,13 @@ const PokemonCard = props => {
         cover= {
           <img
             alt='pokemon'
-            src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png'
+            src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${data.id}.png`}
             style={style.image}
           />
         }
         >
         <Meta
-          title={props.name}
+          title={data.name}
         />
       </Card>
     </Col>

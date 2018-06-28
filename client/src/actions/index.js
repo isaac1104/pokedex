@@ -6,10 +6,17 @@ const requestPokemonData = () => ({
   payload: true
 });
 
-const receivePokemonData = data => ({
-  type: RECEIVE_POKEMON_DATA,
-  payload: data
-});
+const receivePokemonData = data => {
+  const pokemonData = data.results.map(pokemon => {
+    const { url } = pokemon;
+    pokemon.id = url.substring(34, url.length - 1);
+    return pokemon;
+  });
+  return {
+    type: RECEIVE_POKEMON_DATA,
+    payload: pokemonData
+  }
+}
 
 export const fetchPokemonData = () => async dispatch => {
   dispatch(requestPokemonData());

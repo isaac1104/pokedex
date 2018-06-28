@@ -10,12 +10,12 @@ class Pokedex extends Component {
   }
 
   renderPokemonCard() {
-    const { data: { results }, isFetching } = this.props.pokemonData;
-    if (isFetching || !results) {
+    const { data, isFetching } = this.props.pokemonData;
+    if (isFetching) {
       return <h1>Loading...</h1>
     } else {
-      return results.map(pokemon => {
-        return <PokemonCard key={pokemon.name} name={pokemon.name}/>
+      return data.map(pokemon => {
+        return <PokemonCard key={pokemon.name} data={pokemon}/>
       });
     }
   }
