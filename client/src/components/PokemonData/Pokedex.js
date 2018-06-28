@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PokemonCard from './PokemonCard';
 import { fetchPokemonData } from '../../actions';
 import { connect } from 'react-redux';
+import { Row } from 'antd';
 
 class Pokedex extends Component {
   componentDidMount() {
@@ -20,11 +21,12 @@ class Pokedex extends Component {
   }
 
   render() {
-    // console.log(this.props.pokemonData.data.results);
     return (
       <div>
         <h1>Pokedex</h1>
-        {this.renderPokemonCard()}
+        <Row>
+          {this.renderPokemonCard()}
+        </Row>
       </div>
     );
   }
