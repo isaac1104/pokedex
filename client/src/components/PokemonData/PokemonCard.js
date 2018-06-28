@@ -19,6 +19,7 @@ const PokemonCard = ({ data }) => {
       <Card
         style={style.card}
         hoverable
+        onClick={() => console.log(data.name)}
         cover= {
           <FadeIn height={100}>
             {onload => (
