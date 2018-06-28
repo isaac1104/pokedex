@@ -16,11 +16,18 @@ class Pokedex extends Component {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop: '100px'
+        margin: 'auto'
       }
     }
     if (isFetching) {
-      return <Spin style={style.spinner} size='large'/>
+      return (
+        <div style={style.spinner}>
+          <div>
+            <img src='/images/loader.gif' alt='loader' style={{ marginBottom: '30px' }} />
+            <h1 style={{ textAlign: 'center' }}>Fetching Data... Please Wait</h1>
+          </div>
+        </div>
+      );
     } else {
       return data.map(pokemon => {
         return <PokemonCard key={pokemon.name} data={pokemon} />
