@@ -14,10 +14,10 @@ class App extends Component {
 
     return (
       <Row>
-        <Col lg={8} style={style.container}>
+        <Col lg={7} style={style.container}>
           <Pokedex />
         </Col>
-        <Col lg={16}>
+        <Col lg={17}>
           <PokemonContainer />
         </Col>
       </Row>

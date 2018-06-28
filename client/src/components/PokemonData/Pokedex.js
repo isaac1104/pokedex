@@ -2,6 +2,8 @@ import React, { Component, Fragment } from 'react';
 import SearchForm from '../Search/SearchForm';
 import { connect } from 'react-redux';
 import { filterPokemonData } from '../../actions';
+import { Card } from 'antd';
+const { Meta } = Card;
 
 class Pokedex extends Component {
   handleSearch(event) {
@@ -18,10 +20,19 @@ class Pokedex extends Component {
     }
 
     return (
-      <div>
-        <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${this.props.selectedPokemonData.data.id}.png`} alt='pokemon' />
-        <h1>{this.props.selectedPokemonData.data.name}</h1>
-      </div>
+      <Card
+        cover={
+          <img
+            src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${data.id}.png`}
+            alt='pokemon'
+          />
+        }
+        actions={[<h1>Type 1</h1>, <h1>Type 2</h1>]}
+        >
+        <Meta
+          title={<h1 style={{ textAlign: 'center' }}>{data.name}</h1>}
+        />
+      </Card>
     );
   }
 
