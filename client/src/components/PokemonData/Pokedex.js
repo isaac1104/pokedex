@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import PokemonCard from './PokemonCard';
+import SearchForm from '../Search/SearchForm';
 import { fetchPokemonData } from '../../actions';
 import { connect } from 'react-redux';
 import { Row } from 'antd';
@@ -39,9 +40,14 @@ class Pokedex extends Component {
     }
   }
 
+  handleSearch(event) {
+    console.log(event.target.value);
+  }
+
   render() {
     return (
       <Fragment>
+        <SearchForm handleSearch={this.handleSearch} />
         <Row>
           {this.renderPokemonCard()}
         </Row>
