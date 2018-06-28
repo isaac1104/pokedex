@@ -23,7 +23,7 @@ const PokemonCard = ({ data }) => {
         cover= {
           <FadeIn
             height={150}
-            duration={300}
+            duration={150}
             placeholder={<img src='/images/pokeball.gif' alt='loading' />}
             >
             {onload => (
