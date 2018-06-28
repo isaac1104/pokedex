@@ -27,7 +27,9 @@ class Pokedex extends Component {
             alt='pokemon'
           />
         }
-        actions={[<h1>Type 1</h1>, <h1>Type 2</h1>]}
+        actions={data.types.map(pokemon => {
+          return <h3>{pokemon.type.name}</h3>
+        })}
         >
         <Meta
           title={<h1 style={{ textAlign: 'center' }}>{data.name}</h1>}
