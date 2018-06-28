@@ -11,7 +11,7 @@ const receivePokemonData = data => ({
   payload: data
 });
 
-export const fetchPokemonData = () = async dispatch => {
+export const fetchPokemonData = () => async dispatch => {
   dispatch(requestPokemonData());
   const request = await axios.get('/api/pokemon');
   const { data } = request;
