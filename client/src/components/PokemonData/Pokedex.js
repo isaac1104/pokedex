@@ -13,7 +13,7 @@ class Pokedex extends Component {
     return (
       <Fragment>
         <SearchForm handleSearch={this.handleSearch.bind(this)} />
-        <h1>Pokemon Data Here</h1>
+        <h1>{this.props.selectedPokemonData.data.name}</h1>
       </Fragment>
     );
   }

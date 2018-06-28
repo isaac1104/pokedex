@@ -5,9 +5,16 @@ import Pokedex from './PokemonData/Pokedex';
 
 class App extends Component {
   render() {
+    const style = {
+      container: {
+        position: 'sticky',
+        top: 0
+      }
+    }
+
     return (
       <Row>
-        <Col lg={8}>
+        <Col lg={8} style={style.container}>
           <Pokedex />
         </Col>
         <Col lg={16}>
