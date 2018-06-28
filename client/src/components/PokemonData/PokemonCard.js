@@ -20,7 +20,7 @@ const PokemonCard = ({ data }) => {
         style={style.card}
         hoverable
         cover= {
-          <FadeIn height={60}>
+          <FadeIn height={150}>
             {onload => (
               <img
                 alt='pokemon'

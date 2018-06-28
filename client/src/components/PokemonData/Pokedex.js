@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import PokemonCard from './PokemonCard';
 import { fetchPokemonData } from '../../actions';
 import { connect } from 'react-redux';
-import { Row } from 'antd';
+import { Row, Spin } from 'antd';
 
 class Pokedex extends Component {
   componentDidMount() {
@@ -11,23 +11,30 @@ class Pokedex extends Component {
 
   renderPokemonCard() {
     const { data, isFetching } = this.props.pokemonData;
+    const style = {
+      spinner: {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginTop: '100px'
+      }
+    }
     if (isFetching) {
-      return <h1>Loading...</h1>
+      return <Spin style={style.spinner} size='large'/>
     } else {
       return data.map(pokemon => {
-        return <PokemonCard key={pokemon.name} data={pokemon}/>
+        return <PokemonCard key={pokemon.name} data={pokemon} />
       });
     }
   }
 
   render() {
     return (
-      <div>
-        <h1>Pokedex</h1>
+      <Fragment>
         <Row>
           {this.renderPokemonCard()}
         </Row>
-      </div>
+      </Fragment>
     );
   }
 }
