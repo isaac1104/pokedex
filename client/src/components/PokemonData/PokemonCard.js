@@ -9,18 +9,18 @@ const PokemonCard = ({ data }) => {
       textAlign: 'center'
     },
     image: {
-      width: 150,
+      width: '100%',
       margin: 'auto'
     }
   }
 
   return (
-    <Col xs={6} sm={6} md={4} lg={4} xl={4}>
+    <Col xs={12} sm={8} md={6} lg={3} xl={3}>
       <Card
         style={style.card}
         hoverable
         cover= {
-          <FadeIn height={150}>
+          <FadeIn height={100}>
             {onload => (
               <img
                 alt='pokemon'

@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import PokemonCard from './PokemonCard';
 import { fetchPokemonData } from '../../actions';
 import { connect } from 'react-redux';
-import { Row, Spin } from 'antd';
+import { Row } from 'antd';
 
 class Pokedex extends Component {
   componentDidMount() {
@@ -12,19 +12,23 @@ class Pokedex extends Component {
   renderPokemonCard() {
     const { data, isFetching } = this.props.pokemonData;
     const style = {
-      spinner: {
+      container: {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
         margin: 'auto'
+      },
+      spinner: {
+        width: '100%',
+        marginBottom: '30px'
       }
     }
     if (isFetching) {
       return (
-        <div style={style.spinner}>
+        <div style={style.container}>
           <div>
-            <img src='/images/loader.gif' alt='loader' style={{ marginBottom: '30px' }} />
-            <h1 style={{ textAlign: 'center' }}>Fetching Data... Please Wait</h1>
+            <img src='/images/loader.gif' alt='loader' style={style.spinner} />
+            <h1 style={{ textAlign: 'center' }}>Loading...</h1>
           </div>
         </div>
       );
