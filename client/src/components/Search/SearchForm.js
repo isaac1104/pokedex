@@ -1,9 +1,10 @@
 import React from 'react';
 import { Input } from 'antd';
+const { Search } = Input;
 
 const SearchForm = props => {
   return (
-    <Input
+    <Search
       onChange={props.handleSearch}
       placeholder='search for a pokemon'
     />

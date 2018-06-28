@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import PokemonCard from './PokemonCard';
 import SearchForm from '../Search/SearchForm';
-import { fetchPokemonData } from '../../actions';
+import * as actions from '../../actions';
 import { connect } from 'react-redux';
 import { Row } from 'antd';
 
@@ -35,19 +35,20 @@ class Pokedex extends Component {
       );
     } else {
       return data.map(pokemon => {
-        return <PokemonCard key={pokemon.name} data={pokemon} />
+        return <PokemonCard key={pokemon.id} data={pokemon} />
       });
     }
   }
 
   handleSearch(event) {
-    console.log(event.target.value);
+    this.props.filterPokemonData(event.target.value);
   }
 
   render() {
+    console.log(this.props.pokemonData.data);
     return (
       <Fragment>
-        <SearchForm handleSearch={this.handleSearch} />
+        <SearchForm handleSearch={this.handleSearch.bind(this)} />
         <Row>
           {this.renderPokemonCard()}
         </Row>
@@ -62,4 +63,4 @@ function mapStateToProps({ pokemonData }) {
   }
 }
 
-export default connect(mapStateToProps, { fetchPokemonData })(Pokedex);
+export default connect(mapStateToProps, actions)(Pokedex);

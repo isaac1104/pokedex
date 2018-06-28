@@ -1,4 +1,4 @@
-import { REQUEST_POKEMON_DATA, RECEIVE_POKEMON_DATA } from './types.js';
+import { REQUEST_POKEMON_DATA, RECEIVE_POKEMON_DATA, FILTER_POKEMON_DATA } from './types.js';
 import axios from 'axios';
 
 const requestPokemonData = () => ({
@@ -24,3 +24,8 @@ export const fetchPokemonData = () => async dispatch => {
   const { data } = request;
   dispatch(receivePokemonData(data));
 }
+
+export const filterPokemonData = searchTerm => ({
+  type: FILTER_POKEMON_DATA,
+  payload: searchTerm
+});
