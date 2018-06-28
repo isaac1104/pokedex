@@ -2,6 +2,7 @@ import { REQUEST_POKEMON_DATA, RECEIVE_POKEMON_DATA, FILTER_POKEMON_DATA } from 
 
 const INITIAL_STATE = {
   data: [],
+  filteredData: [],
   isFetching: false
 }
 
@@ -21,8 +22,7 @@ function pokemonDataReducer(state = INITIAL_STATE, action) {
     case FILTER_POKEMON_DATA:
       return {
         ...state,
-        isFetching: false,
-        data: state.data.filter(pokemon => pokemon.name.includes(action.payload.toLowerCase()))
+        filteredData: state.data.filter(pokemon => pokemon.name.includes(action.payload.toLowerCase()))
       };
     default:
       return state;

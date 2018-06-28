@@ -23,6 +23,7 @@ export const fetchPokemonData = () => async dispatch => {
   const request = await axios.get('/api/pokemon');
   const { data } = request;
   dispatch(receivePokemonData(data));
+  dispatch(filterPokemonData(''));
 }
 
 export const filterPokemonData = searchTerm => ({

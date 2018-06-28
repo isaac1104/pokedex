@@ -11,7 +11,7 @@ class Pokedex extends Component {
   }
 
   renderPokemonCard() {
-    const { data, isFetching } = this.props.pokemonData;
+    const { filteredData, isFetching } = this.props.pokemonData;
     const style = {
       container: {
         display: 'flex',
@@ -34,7 +34,7 @@ class Pokedex extends Component {
         </div>
       );
     } else {
-      return data.map(pokemon => {
+      return filteredData.map(pokemon => {
         return <PokemonCard key={pokemon.id} data={pokemon} />
       });
     }
@@ -45,7 +45,6 @@ class Pokedex extends Component {
   }
 
   render() {
-    console.log(this.props.pokemonData.data);
     return (
       <Fragment>
         <SearchForm handleSearch={this.handleSearch.bind(this)} />
