@@ -39,7 +39,7 @@ class Pokedex extends Component {
     return statsWithMaxBase.map(pokemon => {
       return (
         <Col xs={12} sm={12} md={12} lg={8} xl={4} key={pokemon.stat.name}>
-          <Progress type='circle' width={80} percent={(pokemon.base_stat / pokemon.max_stat) * 100} format={() => pokemon.stat.name} />
+          <Progress type='dashboard' width={80} percent={(pokemon.base_stat / pokemon.max_stat) * 100} format={() => pokemon.stat.name} />
         </Col>
       );
     });
