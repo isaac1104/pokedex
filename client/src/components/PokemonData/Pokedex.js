@@ -12,11 +12,6 @@ class Pokedex extends Component {
 
   renderStatsChart() {
     const { data } = this.props.selectedPokemonData;
-
-    if (!data.stats) {
-      return <div />
-    }
-
     const statsWithMaxBase = data.stats.map(pokemon => {
       if (pokemon.stat.name === 'speed') {
         pokemon.max_stat = 140;
