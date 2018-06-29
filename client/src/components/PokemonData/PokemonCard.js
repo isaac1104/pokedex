@@ -19,7 +19,7 @@ class PokemonCard extends Component {
     const { data, fetchSelectedPokemonData } = this.props;
 
     return (
-      <Col xs={12} sm={8} md={6} lg={3} xl={3}>
+      <Col xs={24} sm={12} md={8} lg={6} xl={4}>
         <Card
           style={style.card}
           hoverable

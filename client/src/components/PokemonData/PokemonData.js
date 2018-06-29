@@ -40,10 +40,10 @@ class PokemonData extends Component {
     } else {
       return (
         <Row>
-          <Col lg={7} style={style.pokedex}>
+          <Col xs={15} sm={14} md={8} lg={10} xl={8} style={style.pokedex}>
             <Pokedex />
           </Col>
-          <Col lg={17}>
+          <Col xs={9} sm={10} md={16} lg={14} xl={16}>
             <Pokemon />
           </Col>
         </Row>
