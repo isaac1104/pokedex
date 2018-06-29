@@ -1,16 +1,17 @@
 import React, { Component, Fragment } from 'react';
-import PokemonCard from './PokemonCard';
 import * as actions from '../../actions';
 import { connect } from 'react-redux';
-import { Row } from 'antd';
+import { Col, Row } from 'antd';
+import Pokemon from './Pokemon';
+import Pokedex from './Pokedex';
 
-class PokemonContainer extends Component {
+class PokemonData extends Component {
   componentDidMount() {
     this.props.fetchPokemonData();
   }
 
-  renderPokemonCard() {
-    const { filteredData, isFetching } = this.props.pokemonData;
+  renderPokemoData() {
+    const { isFetching } = this.props.pokemonData;
     const style = {
       container: {
         display: 'flex',
@@ -21,6 +22,10 @@ class PokemonContainer extends Component {
       spinner: {
         width: '100%',
         marginBottom: '30px'
+      },
+      pokedex: {
+        position: 'sticky',
+        top: 0
       }
     }
     if (isFetching) {
@@ -33,18 +38,23 @@ class PokemonContainer extends Component {
         </div>
       );
     } else {
-      return filteredData.map(pokemon => {
-        return <PokemonCard key={pokemon.id} data={pokemon} />
-      });
+      return (
+        <Row>
+          <Col lg={7} style={style.pokedex}>
+            <Pokedex />
+          </Col>
+          <Col lg={17}>
+            <Pokemon />
+          </Col>
+        </Row>
+      );
     }
   }
 
   render() {
     return (
       <Fragment>
-        <Row>
-          {this.renderPokemonCard()}
-        </Row>
+        {this.renderPokemoData()}
       </Fragment>
     );
   }
@@ -56,4 +66,4 @@ function mapStateToProps({ pokemonData }) {
   }
 }
 
-export default connect(mapStateToProps, actions)(PokemonContainer);
+export default connect(mapStateToProps, actions)(PokemonData);

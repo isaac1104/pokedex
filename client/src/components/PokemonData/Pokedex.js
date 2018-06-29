@@ -16,7 +16,7 @@ class Pokedex extends Component {
       return <h1>Loading...</h1>
     }
     if (!data.id) {
-      return <div />
+      return <h1 style={{ textAlign: 'center' }}>Click a Pokemon for details</h1>
     }
 
     return (
