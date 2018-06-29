@@ -33,7 +33,7 @@ class PokemonData extends Component {
         <div style={style.container}>
           <div>
             <img src='/images/loading_spin.gif' alt='loader' style={style.spinner} />
-            <h1 style={{ textAlign: 'center' }}>Loading...</h1>
+            <h1 style={{ textAlign: 'center' }}>Powering up Pokedex...</h1>
           </div>
         </div>
       );

@@ -75,7 +75,7 @@ class Pokedex extends Component {
         <div style={style.container}>
           <div>
             <img src='/images/pokeball.gif' alt='loader' style={style.spinner} />
-            <h1 style={{ textAlign: 'center' }}>Loading...</h1>
+            <h1 style={{ textAlign: 'center' }}>Loading Pokemon Data...</h1>
           </div>
         </div>
       )
