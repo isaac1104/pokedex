@@ -26,6 +26,10 @@ class Pokedex extends Component {
       pokedex: {
         position: 'sticky',
         top: 0
+      },
+      text: {
+        textAlign: 'center',
+        marginTop: '20px'
       }
     }
     if (isFetching) {
@@ -39,7 +43,7 @@ class Pokedex extends Component {
       )
     }
     if (!data.id) {
-      return <h1 style={{ textAlign: 'center' }}>Click a Pokemon for details</h1>
+      return <h1 style={style.text}>Click a Pokemon for details</h1>
     }
 
     return (
