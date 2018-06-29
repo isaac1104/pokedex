@@ -26,7 +26,8 @@ class PokemonData extends Component {
       },
       pokedex: {
         position: 'sticky',
-        top: 0
+        top: 0,
+        backgroundColor: '#FFE66D'
       }
     }
     if (isFetching) {
@@ -35,7 +36,7 @@ class PokemonData extends Component {
           <div>
             <FadeIn height={300}>
               {onload => (
-                <img src='/images/pokedex.gif' alt='loader' style={style.spinner} onLoad={onload} />
+                <img src='/images/loading_spin.gif' alt='loader' style={style.spinner} onLoad={onload} />
               )}
             </FadeIn>
             <h1 style={{ textAlign: 'center' }}>Powering up Pokedex...</h1>

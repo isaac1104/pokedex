@@ -9,7 +9,8 @@ class PokemonCard extends Component {
   render() {
     const style = {
       card: {
-        textAlign: 'center'
+        textAlign: 'center',
+        backgroundColor: '#F7FFF7'
       },
       image: {
         width: '100%',

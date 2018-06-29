@@ -58,17 +58,18 @@ class Pokedex extends Component {
         width: '100%',
         marginBottom: '30px'
       },
-      pokedex: {
-        position: 'sticky',
-        top: 0
-      },
       text: {
         textAlign: 'center',
-        marginTop: '20px'
+        marginTop: '20px',
+        color: '#1A535C'
       },
       image: {
         width: '70%',
         margin: 'auto'
+      },
+      card: {
+        textAlign: 'center',
+        backgroundColor: '#FFE66D'
       }
     }
     if (isFetching) {
@@ -80,7 +81,7 @@ class Pokedex extends Component {
                 <img src='/images/pokeball.gif' alt='loader' style={style.spinner} onLoad={onload} />
               )}
             </FadeIn>
-            <h1 style={{ textAlign: 'center' }}>Loading Pokemon Data...</h1>
+            <h1 style={{ textAlign: 'center', color: '#1A535C' }}>Loading Pokemon Data...</h1>
           </div>
         </div>
       )
@@ -91,7 +92,7 @@ class Pokedex extends Component {
 
     return (
       <Card
-        style={{ textAlign: 'center' }}
+        style={style.card}
         cover={
           <img
             src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${data.id}.png`}
@@ -100,18 +101,18 @@ class Pokedex extends Component {
           />
         }
         actions={data.types.map(pokemon => {
-          return <h4 key={pokemon.type.name}>{pokemon.type.name}</h4>
+          return <h4 style={{ color: '#F7FFF7' }} key={pokemon.type.name}>{pokemon.type.name}</h4>
         })}
       >
         <Meta
-          title={<h1>{data.name}</h1>}
+          title={<h1 style={{ color: '#1A535C' }}>{data.name}</h1>}
           description={
             <Fragment>
               <Row>
                 {this.renderStatsChart()}
               </Row>
               <Row>
-                <h3>{data.height} Ft. <Divider type='vertical' /> {data.weight} Lbs.</h3>
+                <h3 style={{ color: '#1A535C' }}>{data.height} Ft. <Divider type='vertical' /> {data.weight} Lbs.</h3>
               </Row>
             </Fragment>
           }
