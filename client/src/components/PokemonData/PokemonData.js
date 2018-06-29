@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import * as actions from '../../actions';
 import { connect } from 'react-redux';
 import { Col, Row } from 'antd';
+import { FadeIn } from 'react-lazyload-fadein';
 import Pokemon from './Pokemon';
 import Pokedex from './Pokedex';
 
@@ -32,7 +33,11 @@ class PokemonData extends Component {
       return (
         <div style={style.container}>
           <div>
-            <img src='/images/pokedex.gif' alt='loader' style={style.spinner} />
+            <FadeIn height={300}>
+              {onload => (
+                <img src='/images/pokedex.gif' alt='loader' style={style.spinner} onLoad={onload} />
+              )}
+            </FadeIn>
             <h1 style={{ textAlign: 'center' }}>Powering up Pokedex...</h1>
           </div>
         </div>

@@ -3,6 +3,7 @@ import SearchForm from '../Search/SearchForm';
 import { connect } from 'react-redux';
 import { filterPokemonData } from '../../actions';
 import { Card, Col, Divider, Row, Progress } from 'antd';
+import { FadeIn } from 'react-lazyload-fadein';
 const { Meta } = Card;
 
 class Pokedex extends Component {
@@ -74,7 +75,11 @@ class Pokedex extends Component {
       return (
         <div style={style.container}>
           <div>
-            <img src='/images/pokeball.gif' alt='loader' style={style.spinner} />
+            <FadeIn height={150} duration={100}>
+              {onload => (
+                <img src='/images/pokeball.gif' alt='loader' style={style.spinner} onLoad={onload} />
+              )}
+            </FadeIn>
             <h1 style={{ textAlign: 'center' }}>Loading Pokemon Data...</h1>
           </div>
         </div>
