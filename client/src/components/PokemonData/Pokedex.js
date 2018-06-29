@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import SearchForm from '../Search/SearchForm';
 import { connect } from 'react-redux';
 import { filterPokemonData } from '../../actions';
-import { Card, Spin } from 'antd';
+import { Card, Col, Divider, Row } from 'antd';
 const { Meta } = Card;
 
 class Pokedex extends Component {
@@ -44,6 +44,7 @@ class Pokedex extends Component {
 
     return (
       <Card
+        style={{ textAlign: 'center' }}
         cover={
           <img
             src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${data.id}.png`}
@@ -51,11 +52,27 @@ class Pokedex extends Component {
           />
         }
         actions={data.types.map(pokemon => {
-          return <h3>{pokemon.type.name}</h3>
+          return <h4 key={pokemon.type.name}>{pokemon.type.name}</h4>
         })}
-        >
+      >
         <Meta
-          title={<h1 style={{ textAlign: 'center' }}>{data.name}</h1>}
+          title={<h1>{data.name}</h1>}
+          description={
+            <Fragment>
+              <Row>
+                <h3>{data.height} Ft. <Divider type='vertical' /> {data.weight} Lbs.</h3>
+              </Row>
+              <Row>
+                {data.stats.map(pokemon => {
+                  return (
+                    <Col lg={12} key={pokemon.stat.name}>
+                      <h4>{pokemon.stat.name}: {pokemon.base_stat}</h4>
+                    </Col>
+                  )
+                })}
+              </Row>
+            </Fragment>
+          }
         />
       </Card>
     );
