@@ -24,11 +24,11 @@ body {
 }
 
 .ant-progress-circle-path {
-  stroke: #4ECDC4 !important;
+  stroke: #FF6B6B !important;
 }
 
 .ant-progress-status-success .ant-progress-circle-path {
-  stroke: #FF6B6B !important;
+  stroke: #4ECDC4 !important;
 }
 
 .ant-input {
