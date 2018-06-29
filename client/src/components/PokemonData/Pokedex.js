@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react';
 import SearchForm from '../Search/SearchForm';
 import { connect } from 'react-redux';
 import { filterPokemonData } from '../../actions';
-import { Card } from 'antd';
+import { Card, Spin } from 'antd';
 const { Meta } = Card;
 
 class Pokedex extends Component {
@@ -12,8 +12,31 @@ class Pokedex extends Component {
 
   renderPokemonDetail() {
     const { data, isFetching } = this.props.selectedPokemonData;
+    const style = {
+      container: {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        margin: 'auto'
+      },
+      spinner: {
+        width: '100%',
+        marginBottom: '30px'
+      },
+      pokedex: {
+        position: 'sticky',
+        top: 0
+      }
+    }
     if (isFetching) {
-      return <h1>Loading...</h1>
+      return (
+        <div style={style.container}>
+          <div>
+            <img src='/images/pokeball.gif' alt='loader' style={style.spinner} />
+            <h1 style={{ textAlign: 'center' }}>Loading...</h1>
+          </div>
+        </div>
+      )
     }
     if (!data.id) {
       return <h1 style={{ textAlign: 'center' }}>Click a Pokemon for details</h1>
