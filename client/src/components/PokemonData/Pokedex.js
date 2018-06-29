@@ -30,6 +30,10 @@ class Pokedex extends Component {
       text: {
         textAlign: 'center',
         marginTop: '20px'
+      },
+      image: {
+        width: '70%',
+        margin: 'auto'
       }
     }
     if (isFetching) {
@@ -52,6 +56,7 @@ class Pokedex extends Component {
         cover={
           <img
             src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${data.id}.png`}
+            style={style.image}
             alt='pokemon'
           />
         }
