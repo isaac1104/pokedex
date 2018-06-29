@@ -2,12 +2,51 @@ import React, { Component, Fragment } from 'react';
 import SearchForm from '../Search/SearchForm';
 import { connect } from 'react-redux';
 import { filterPokemonData } from '../../actions';
-import { Card, Col, Divider, Row } from 'antd';
+import { Card, Col, Divider, Row, Progress } from 'antd';
 const { Meta } = Card;
 
 class Pokedex extends Component {
   handleSearch(event) {
     this.props.filterPokemonData(event.target.value);
+  }
+
+  renderStatsChart() {
+    const { data } = this.props.selectedPokemonData;
+
+    if (!data.stats) {
+      return <div />
+    }
+
+    const statsWithMaxBase = data.stats.map(pokemon => {
+      if (pokemon.stat.name === 'speed') {
+        pokemon.max_stat = 140;
+        return pokemon;
+      } else if (pokemon.stat.name === 'special-attack') {
+        pokemon.max_stat = 154;
+        return pokemon;
+      } else if (pokemon.stat.name === 'special-defense') {
+        pokemon.max_stat = 154;
+        return pokemon;
+      } else if (pokemon.stat.name === 'defense') {
+        pokemon.max_stat = 180;
+        return pokemon;
+      } else if (pokemon.stat.name === 'attack') {
+        pokemon.max_stat = 134;
+        return pokemon;
+      } else if (pokemon.stat.name === 'hp') {
+        pokemon.max_stat = 250;
+        return pokemon;
+      } else {
+        return <div />
+      }
+    });
+    return statsWithMaxBase.map(pokemon => {
+      return (
+        <Col xs={12} sm={12} md={12} lg={8} xl={4} key={pokemon.stat.name}>
+          <Progress type='circle' width={80} percent={(pokemon.base_stat / pokemon.max_stat) * 100} format={() => pokemon.stat.name} />
+        </Col>
+      );
+    });
   }
 
   renderPokemonDetail() {
@@ -69,16 +108,10 @@ class Pokedex extends Component {
           description={
             <Fragment>
               <Row>
-                <h3>{data.height} Ft. <Divider type='vertical' /> {data.weight} Lbs.</h3>
+                {this.renderStatsChart()}
               </Row>
               <Row>
-                {data.stats.map(pokemon => {
-                  return (
-                    <Col lg={12} key={pokemon.stat.name}>
-                      <h4>{pokemon.stat.name}: {pokemon.base_stat}</h4>
-                    </Col>
-                  )
-                })}
+                <h3>{data.height} Ft. <Divider type='vertical' /> {data.weight} Lbs.</h3>
               </Row>
             </Fragment>
           }
@@ -88,7 +121,6 @@ class Pokedex extends Component {
   }
 
   render() {
-    console.log(this.props.selectedPokemonData);
     return (
       <Fragment>
         <SearchForm handleSearch={this.handleSearch.bind(this)} />
