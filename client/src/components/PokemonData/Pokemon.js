@@ -5,7 +5,7 @@ import { Row } from 'antd';
 
 class Pokemon extends Component {
   renderPokemonCard() {
-    const { filteredData, } = this.props.pokemonData;
+    const { filteredData } = this.props.pokemonData;
     return filteredData.map(pokemon => {
       return <PokemonCard key={pokemon.id} data={pokemon} />
     });
