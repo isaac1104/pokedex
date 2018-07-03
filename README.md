@@ -6,6 +6,8 @@ Built with React and Redux.
 
 ## How to Run
 
+Visit the live site `https://pokedex-isaac.herokuapp.com/` or...
+
 1. Clone this repo or download the zip file.
 
 2. Run `yarn` or `npm install` inside of root & client folder.
