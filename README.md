@@ -6,7 +6,7 @@ Built with React and Redux.
 
 ## How to Run
 
-Visit the live site `https://pokedex-isaac.herokuapp.com/` or...
+Visit the [live site] (https://pokedex-isaac.herokuapp.com/) or
 
 1. Clone this repo or download the zip file.
 
