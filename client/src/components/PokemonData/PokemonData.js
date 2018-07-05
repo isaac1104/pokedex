@@ -36,7 +36,7 @@ class PokemonData extends Component {
           <div>
             <FadeIn height={300}>
               {onload => (
-                <img src='/images/loading_spin.gif' alt='loader' style={style.spinner} onLoad={onload} />
+                <img src='/images/loader.gif' alt='loader' style={style.spinner} onLoad={onload} />
               )}
             </FadeIn>
             <h1 style={{ textAlign: 'center' }}>Powering up Pokedex...</h1>
