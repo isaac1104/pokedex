@@ -14,26 +14,27 @@ class Pokedex extends Component {
   renderStatsChart() {
     const { data } = this.props.selectedPokemonData;
     const statsWithMaxBase = data.stats.map(pokemon => {
-      if (pokemon.stat.name === 'speed') {
-        pokemon.max_stat = 140;
-        return pokemon;
-      } else if (pokemon.stat.name === 'special-attack') {
-        pokemon.max_stat = 154;
-        return pokemon;
-      } else if (pokemon.stat.name === 'special-defense') {
-        pokemon.max_stat = 154;
-        return pokemon;
-      } else if (pokemon.stat.name === 'defense') {
-        pokemon.max_stat = 180;
-        return pokemon;
-      } else if (pokemon.stat.name === 'attack') {
-        pokemon.max_stat = 134;
-        return pokemon;
-      } else if (pokemon.stat.name === 'hp') {
-        pokemon.max_stat = 250;
-        return pokemon;
-      } else {
-        return <div />
+      switch (pokemon.stat.name) {
+        case 'speed':
+          pokemon.max_stat = 140;
+          return pokemon;
+        case 'special-attack':
+          pokemon.max_stat = 154;
+          return pokemon;
+        case 'special-defense':
+          pokemon.max_stat = 154;
+          return pokemon;
+        case 'defense':
+          pokemon.max_stat = 180;
+          return pokemon;
+        case 'attack':
+          pokemon.max_stat = 134;
+          return pokemon;
+        case 'hp':
+          pokemon.max_stat = 250;
+          return pokemon;
+        default:
+          return <div />
       }
     });
     return statsWithMaxBase.map(pokemon => {
