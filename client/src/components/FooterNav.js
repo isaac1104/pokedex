@@ -3,8 +3,15 @@ import { Divider, Icon, Layout } from 'antd';
 const { Footer } = Layout;
 
 const FooterNav = () => {
+  const style = {
+    textAlign: 'center',
+    position: 'sticky',
+    bottom: 0,
+    marginTop: '10px'
+  }
+
   return (
-    <Footer style={{ textAlign: 'center' }}>
+    <Footer style={style}>
       PokeDex ©2018 Created by Isaac Kwon
       <Divider type='vertical' />
       <a href='https://github.com/isaac1104'>
