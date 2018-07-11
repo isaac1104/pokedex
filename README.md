@@ -1,6 +1,6 @@
 # Pokedex
 
-![pokedex](https://user-images.githubusercontent.com/28583016/42586645-6ecfbece-84ed-11e8-9a75-4ee755659ff2.PNG)
+![pokedex](https://user-images.githubusercontent.com/28583016/42587437-93abd69a-84ef-11e8-85c4-031ada14a4c1.PNG)
 
 Pokedex is a web application that lets users view all first 151 pokemons and see it's stats.
 
