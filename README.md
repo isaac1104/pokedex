@@ -1,5 +1,7 @@
 # Pokedex
 
+![pokedex](https://user-images.githubusercontent.com/28583016/42586645-6ecfbece-84ed-11e8-9a75-4ee755659ff2.PNG)
+
 Pokedex is a web application that lets users view all first 151 pokemons and see it's stats.
 
 Built with React and Redux.
