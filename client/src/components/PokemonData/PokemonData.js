@@ -2,7 +2,6 @@ import React, { Component, Fragment } from 'react';
 import * as actions from '../../actions';
 import { connect } from 'react-redux';
 import { Col, Row } from 'antd';
-import { FadeIn } from 'react-lazyload-fadein';
 import Pokemon from './Pokemon';
 import Pokedex from './Pokedex';
 
