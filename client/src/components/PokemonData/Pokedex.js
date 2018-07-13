@@ -13,31 +13,7 @@ class Pokedex extends Component {
 
   renderStatsChart() {
     const { data } = this.props.selectedPokemonData;
-    const statsWithMaxBase = data.stats.map(pokemon => {
-      switch (pokemon.stat.name) {
-        case 'speed':
-          pokemon.max_stat = 140;
-          return pokemon;
-        case 'special-attack':
-          pokemon.max_stat = 154;
-          return pokemon;
-        case 'special-defense':
-          pokemon.max_stat = 154;
-          return pokemon;
-        case 'defense':
-          pokemon.max_stat = 180;
-          return pokemon;
-        case 'attack':
-          pokemon.max_stat = 134;
-          return pokemon;
-        case 'hp':
-          pokemon.max_stat = 250;
-          return pokemon;
-        default:
-          return <div />
-      }
-    });
-    return statsWithMaxBase.map(pokemon => {
+    return data.stats.map(pokemon => {
       return (
         <Col xs={12} sm={12} md={12} lg={8} xl={4} key={pokemon.stat.name}>
           <Progress type='dashboard' width={80} percent={(pokemon.base_stat / pokemon.max_stat) * 100} format={() => pokemon.stat.name} />
