@@ -55,29 +55,44 @@ export const fetchSelectedPokemonData = pokemon => async dispatch => {
     }
   });
   const { data } = request;
-  data.stats.map(pokemon => {
-    switch (pokemon.stat.name) {
-      case 'speed':
-        pokemon.max_stat = 140;
-        return pokemon;
-      case 'special-attack':
-        pokemon.max_stat = 154;
-        return pokemon;
-      case 'special-defense':
-        pokemon.max_stat = 154;
-        return pokemon;
-      case 'defense':
-        pokemon.max_stat = 180;
-        return pokemon;
-      case 'attack':
-        pokemon.max_stat = 134;
-        return pokemon;
-      case 'hp':
-        pokemon.max_stat = 250;
-        return pokemon;
-      default:
-        return null;
-    }
-  });
-  dispatch(receiveSelectedPokemonData(data));
+  const newData = {
+    ...data,
+    stats: data.stats.map(pokemon => {
+      switch (pokemon.stat.name) {
+        case 'speed':
+          return {
+            ...pokemon,
+            max_stat: 140
+          };
+        case 'special-attack':
+          return {
+            ...pokemon,
+            max_stat: 154
+          };
+        case 'special-defense':
+          return {
+            ...pokemon,
+            max_stat: 154
+          };
+        case 'defense':
+          return {
+            ...pokemon,
+            max_stat: 180
+          };
+        case 'attack':
+          return {
+            ...pokemon,
+            max_stat: 134
+          };
+        case 'hp':
+          return {
+            ...pokemon,
+            max_stat: 250
+          };
+        default:
+          return null;
+      }
+    })
+  };
+  dispatch(receiveSelectedPokemonData(newData));
 }
