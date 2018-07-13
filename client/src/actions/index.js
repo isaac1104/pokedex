@@ -13,14 +13,15 @@ const requestPokemonData = () => ({
 });
 
 const receivePokemonData = data => {
-  const pokemonData = data.results.map(pokemon => {
-    const { url } = pokemon;
-    pokemon.id = url.substring(34, url.length - 1);
-    return pokemon;
+  const newData = data.results.map(pokemon => {
+    return {
+      ...pokemon,
+      id: pokemon.url.substring(34, pokemon.url.length - 1)
+    }
   });
   return {
     type: RECEIVE_POKEMON_DATA,
-    payload: pokemonData
+    payload: newData
   }
 }
 
