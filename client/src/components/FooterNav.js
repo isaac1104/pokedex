@@ -5,9 +5,9 @@ const { Footer } = Layout;
 const FooterNav = () => {
   const style = {
     textAlign: 'center',
-    position: 'sticky',
-    bottom: 0,
-    marginTop: '10px'
+    position: 'fixed',
+    width: '100%',
+    bottom: 0
   }
 
   return (
