@@ -13,10 +13,10 @@ const requestPokemonData = () => ({
 });
 
 const receivePokemonData = data => {
-  const newData = data.results.map(pokemon => {
+  const newData = data.results.map(data => {
     return {
-      ...pokemon,
-      id: pokemon.url.substring(34, pokemon.url.length - 1)
+      ...data,
+      id: data.url.substring(34, data.url.length - 1)
     }
   });
   return {
