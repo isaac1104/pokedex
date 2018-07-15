@@ -58,36 +58,36 @@ export const fetchSelectedPokemonData = pokemon => async dispatch => {
   const { data } = request;
   const newData = {
     ...data,
-    stats: data.stats.map(pokemon => {
-      switch (pokemon.stat.name) {
+    stats: data.stats.map(data => {
+      switch (data.stat.name) {
         case 'speed':
           return {
-            ...pokemon,
+            ...data,
             max_stat: 140
           };
         case 'special-attack':
           return {
-            ...pokemon,
+            ...data,
             max_stat: 154
           };
         case 'special-defense':
           return {
-            ...pokemon,
+            ...data,
             max_stat: 154
           };
         case 'defense':
           return {
-            ...pokemon,
+            ...data,
             max_stat: 180
           };
         case 'attack':
           return {
-            ...pokemon,
+            ...data,
             max_stat: 134
           };
         case 'hp':
           return {
-            ...pokemon,
+            ...data,
             max_stat: 250
           };
         default:
