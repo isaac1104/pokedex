@@ -23,7 +23,7 @@ const receivePokemonData = data => {
     type: RECEIVE_POKEMON_DATA,
     payload: newData
   }
-}
+};
 
 export const fetchPokemonData = () => async dispatch => {
   dispatch(requestPokemonData());
@@ -31,7 +31,7 @@ export const fetchPokemonData = () => async dispatch => {
   const { data } = request;
   dispatch(receivePokemonData(data));
   dispatch(filterPokemonData(''));
-}
+};
 
 export const filterPokemonData = searchTerm => ({
   type: FILTER_POKEMON_DATA,
@@ -96,4 +96,4 @@ export const fetchSelectedPokemonData = pokemon => async dispatch => {
     })
   };
   dispatch(receiveSelectedPokemonData(newData));
-}
+};
