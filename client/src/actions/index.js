@@ -48,44 +48,5 @@ export const fetchSelectedPokemonData = pokemon => async dispatch => {
     }
   });
   const { data } = request;
-  const newData = {
-    ...data,
-    stats: data.stats.map(data => {
-      switch (data.stat.name) {
-        case 'speed':
-          return {
-            ...data,
-            max_stat: 140
-          };
-        case 'special-attack':
-          return {
-            ...data,
-            max_stat: 154
-          };
-        case 'special-defense':
-          return {
-            ...data,
-            max_stat: 154
-          };
-        case 'defense':
-          return {
-            ...data,
-            max_stat: 180
-          };
-        case 'attack':
-          return {
-            ...data,
-            max_stat: 134
-          };
-        case 'hp':
-          return {
-            ...data,
-            max_stat: 250
-          };
-        default:
-          return null;
-      }
-    })
-  };
-  dispatch(receiveSelectedPokemonData(newData));
+  dispatch(receiveSelectedPokemonData(data));
 };

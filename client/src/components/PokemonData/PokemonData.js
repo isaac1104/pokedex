@@ -56,7 +56,6 @@ class PokemonData extends Component {
   }
 
   render() {
-    console.log(this.props.pokemonData);
     return (
       <Fragment>
         {this.renderPokemoData()}
