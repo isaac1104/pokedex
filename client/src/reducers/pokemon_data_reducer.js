@@ -18,7 +18,8 @@ function pokemonDataReducer(state = INITIAL_STATE, action) {
         ...state,
         isFetching: false,
         data: {
-          ...action.payload.results.map(data => {
+          ...action.payload,
+          results: action.payload.results.map(data => {
             return {
               ...data,
               id: data.url.substring(34, data.url.length - 1)
