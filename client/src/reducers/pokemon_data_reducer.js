@@ -17,12 +17,19 @@ function pokemonDataReducer(state = INITIAL_STATE, action) {
       return {
         ...state,
         isFetching: false,
-        data: action.payload
+        data: {
+          ...action.payload.results.map(data => {
+            return {
+              ...data,
+              id: data.url.substring(34, data.url.length - 1)
+            };
+          })
+        }
       };
     case FILTER_POKEMON_DATA:
       return {
         ...state,
-        filteredData: state.data.filter(pokemon => pokemon.name.includes(action.payload.toLowerCase()))
+        filteredData: state.data.results.filter(pokemon => pokemon.name.includes(action.payload.toLowerCase()))
       };
     default:
       return state;

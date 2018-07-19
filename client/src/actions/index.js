@@ -12,18 +12,10 @@ const requestPokemonData = () => ({
   payload: true
 });
 
-const receivePokemonData = data => {
-  const newData = data.results.map(data => {
-    return {
-      ...data,
-      id: data.url.substring(34, data.url.length - 1)
-    }
-  });
-  return {
-    type: RECEIVE_POKEMON_DATA,
-    payload: newData
-  }
-};
+const receivePokemonData = data => ({
+  type: RECEIVE_POKEMON_DATA,
+  payload: data
+});
 
 export const fetchPokemonData = () => async dispatch => {
   dispatch(requestPokemonData());
