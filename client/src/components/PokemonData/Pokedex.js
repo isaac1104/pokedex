@@ -15,8 +15,13 @@ class Pokedex extends Component {
     const { data } = this.props.selectedPokemonData;
     return data.stats.map(pokemon => {
       return (
-        <Col xs={12} sm={12} md={12} lg={8} xl={4} key={pokemon.stat.name}>
-          <Progress type='dashboard' width={80} percent={(pokemon.base_stat / pokemon.max_stat) * 100} format={() => pokemon.stat.name} />
+        <Col xs={24} sm={24} md={24} lg={12} xl={12} key={pokemon.stat.name}>
+          <Progress
+            size='small'
+            showInfo={false}
+            percent={(pokemon.base_stat / pokemon.max_stat) * 100}
+          />
+          <h5>{`${pokemon.stat.name.toUpperCase()}: ${pokemon.base_stat}`}</h5>
         </Col>
       );
     });

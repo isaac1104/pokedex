@@ -23,12 +23,8 @@ body {
   color: #1A535C !important;
 }
 
-.ant-progress-circle-path {
-  stroke: #FF6B6B !important;
-}
-
-.ant-progress-status-success .ant-progress-circle-path {
-  stroke: #4ECDC4 !important;
+.ant-progress-bg {
+  background-color: #FF6B6B !important;
 }
 
 .ant-input {
