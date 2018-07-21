@@ -25,23 +25,14 @@ class PokemonCard extends Component {
           style={style.card}
           hoverable
           onClick={() => fetchSelectedPokemonData(data.name)}
-          cover= {
-            <FadeIn
-              height={150}
-              duration={150}
-              placeholder={<img src='/images/pokeball.gif' alt='loading' />}
-              >
-              {onload => (
-                <img
-                  alt='pokemon'
-                  src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${data.id}.png`}
-                  style={style.image}
-                  onLoad={onload}
-                />
-              )}
-            </FadeIn>
+          cover={
+            <img
+              alt='pokemon'
+              src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${data.id}.png`}
+              style={style.image}
+            />
           }
-          >
+        >
           <Meta
             title={data.name}
           />
