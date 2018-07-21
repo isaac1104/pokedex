@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Card, Col } from 'antd';
 import { connect } from 'react-redux';
 import { fetchSelectedPokemonData } from '../../actions';
-import { FadeIn } from 'react-lazyload-fadein';
 const { Meta } = Card;
 
 class PokemonCard extends Component {
