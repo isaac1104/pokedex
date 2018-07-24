@@ -46,7 +46,7 @@ class Pokedex extends Component {
         color: '#1A535C'
       },
       image: {
-        width: '70%',
+        width: '60%',
         margin: 'auto'
       },
       card: {
