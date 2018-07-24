@@ -35,7 +35,6 @@ class PokemonData extends Component {
     if (isFetching) {
       return (
         <div style={style.container}>
-          {/* <div> */}
           <Spin
             tip='Powering up Pokedex...'
             indicator={
