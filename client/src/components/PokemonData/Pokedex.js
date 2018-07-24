@@ -3,7 +3,6 @@ import SearchForm from '../Search/SearchForm';
 import { connect } from 'react-redux';
 import { filterPokemonData } from '../../actions';
 import { Card, Col, Divider, Row, Progress } from 'antd';
-import { FadeIn } from 'react-lazyload-fadein';
 const { Meta } = Card;
 
 class Pokedex extends Component {
@@ -30,15 +29,9 @@ class Pokedex extends Component {
   renderPokemonDetail() {
     const { data, isFetching } = this.props.selectedPokemonData;
     const style = {
-      container: {
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        margin: 'auto'
-      },
       spinner: {
-        width: '100%',
-        marginBottom: '30px'
+        width: '70%',
+        margin: 'auto'
       },
       text: {
         textAlign: 'center',
@@ -53,20 +46,17 @@ class Pokedex extends Component {
         textAlign: 'center',
         backgroundColor: '#f0f2f5'
       }
-    }
+    };
     if (isFetching) {
       return (
-        <div style={style.container}>
-          <div>
-            <FadeIn height={150} duration={100}>
-              {onload => (
-                <img src='/images/pokeball.gif' alt='loader' style={style.spinner} onLoad={onload} />
-              )}
-            </FadeIn>
-            <h1 style={{ textAlign: 'center', color: '#1A535C' }}>Loading Pokemon Data...</h1>
-          </div>
-        </div>
-      )
+        <Card
+          style={style.card}
+          loading={true}
+          cover={
+            <img src='/images/pokeball.gif' alt='loader' style={style.spinner} />
+          }
+        />
+      );
     }
     if (!data.id) {
       return <h1 style={style.text}>Select a Pokemon for details</h1>
