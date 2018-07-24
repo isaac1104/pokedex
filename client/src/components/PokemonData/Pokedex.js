@@ -90,7 +90,7 @@ class Pokedex extends Component {
           title={<h1 style={{ color: '#1A535C' }}>{data.name}</h1>}
           description={
             <Fragment>
-              <Row>
+              <Row gutter={16}>
                 {this.renderStatsChart()}
               </Row>
               <Row>
