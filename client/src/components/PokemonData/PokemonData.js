@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import * as actions from '../../actions';
 import { connect } from 'react-redux';
-import { Col, Row } from 'antd';
+import { Col, Icon, Row, Spin } from 'antd';
 import Pokemon from './Pokemon';
 import Pokedex from './Pokedex';
 
@@ -17,11 +17,11 @@ class PokemonData extends Component {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        margin: 'auto'
+        margin: 'auto',
+        height: '80vh'
       },
       spinner: {
-        width: '100%',
-        marginBottom: '30px'
+        fontSize: '84px'
       },
       pokedex: {
         position: 'sticky',
@@ -35,10 +35,17 @@ class PokemonData extends Component {
     if (isFetching) {
       return (
         <div style={style.container}>
-          <div>
-            <img src='/images/loader.gif' alt='loader' style={style.spinner} />
-            <h1 style={{ textAlign: 'center' }}>Powering up Pokedex...</h1>
-          </div>
+          {/* <div> */}
+          <Spin
+            tip='Powering up Pokedex...'
+            indicator={
+              <Icon
+                type='loading'
+                size='large'
+                style={style.spinner}
+              />
+            }
+          />
         </div>
       );
     } else {
