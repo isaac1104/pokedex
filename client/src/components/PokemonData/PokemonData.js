@@ -49,7 +49,7 @@ class PokemonData extends Component {
       );
     } else {
       return (
-        <Row gutter={8}>
+        <Row>
           <Col xs={15} sm={14} md={8} lg={10} xl={8} style={style.pokedex}>
             <Pokedex />
           </Col>
