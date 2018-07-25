@@ -7,8 +7,9 @@ body {
   background-color: #F7FFF7;
 }
 
-.ant-card.ant-card-bordered.ant-card-hoverable {
+.ant-col-xs-24.ant-col-sm-12.ant-col-md-8.ant-col-lg-6.ant-col-xl-3:hover {
   border: 1px solid #4ECDC4 !important;
+  cursor: pointer;
 }
 
 .ant-card-actions {

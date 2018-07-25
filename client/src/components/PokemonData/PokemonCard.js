@@ -23,7 +23,6 @@ class PokemonCard extends Component {
       <Col xs={24} sm={12} md={8} lg={6} xl={3}>
         <Card
           style={style.card}
-          hoverable
           onClick={() => fetchSelectedPokemonData(data.name)}
           cover={
             <img
