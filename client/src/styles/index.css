@@ -7,9 +7,13 @@ body {
   background-color: #F7FFF7;
 }
 
-.ant-col-xs-24.ant-col-sm-12.ant-col-md-8.ant-col-lg-6.ant-col-xl-3:hover {
-  border: 1px solid #4ECDC4 !important;
+.ant-col-xs-24.ant-col-sm-12.ant-col-md-8.ant-col-lg-6.ant-col-xl-3 .ant-card.ant-card-bordered:hover {
+  background-color: #4ECDC4 !important;
   cursor: pointer;
+}
+
+.ant-col-xs-24.ant-col-sm-12.ant-col-md-8.ant-col-lg-6.ant-col-xl-3 .ant-card.ant-card-bordered:hover .ant-card-meta-title {
+  color: #fff !important;
 }
 
 .ant-card-actions {
@@ -18,6 +22,10 @@ body {
 
 .ant-card-meta-title {
   color: #343a40 !important;
+}
+
+.ant-card-cover {
+  min-height: 120px;
 }
 
 .ant-progress-text {
