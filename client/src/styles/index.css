@@ -7,12 +7,12 @@ body {
   background-color: #F7FFF7;
 }
 
-.ant-col-xs-24.ant-col-sm-12.ant-col-md-8.ant-col-lg-6.ant-col-xl-3 .ant-card.ant-card-bordered:hover {
+.pokemon-card:hover {
   background-color: #4ECDC4 !important;
   cursor: pointer;
 }
 
-.ant-col-xs-24.ant-col-sm-12.ant-col-md-8.ant-col-lg-6.ant-col-xl-3 .ant-card.ant-card-bordered:hover .ant-card-meta-title {
+.pokemon-card:hover .ant-card-meta-title {
   color: #fff !important;
 }
 

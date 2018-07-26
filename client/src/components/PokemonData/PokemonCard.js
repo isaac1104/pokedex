@@ -20,6 +20,7 @@ class PokemonCard extends Component {
     return (
       <Col xs={24} sm={12} md={8} lg={6} xl={3}>
         <Card
+          className='pokemon-card'
           style={style.card}
           onClick={() => fetchSelectedPokemonData(data.name)}
           cover={
