@@ -64,7 +64,8 @@ class Pokedex extends Component {
         data: {
           textAlign: 'center',
           backgroundColor: '#36393f',
-          borderTop: 'none'
+          borderTop: 'none',
+          borderLeft: 'none'
         }
       }
     };
