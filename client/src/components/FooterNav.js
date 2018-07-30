@@ -7,8 +7,10 @@ const FooterNav = () => {
     textAlign: 'center',
     position: 'fixed',
     width: '100%',
-    bottom: 0
-  }
+    bottom: 0,
+    backgroundColor: '#202225',
+    color: '#fff'
+  };
 
   return (
     <Footer style={style}>

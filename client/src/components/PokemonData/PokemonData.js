@@ -26,12 +26,12 @@ class PokemonData extends Component {
       pokedex: {
         position: 'sticky',
         top: 0,
-        backgroundColor: '#36393f'
+        backgroundColor: '#2f3136'
       },
       pokemonBox: {
         marginBottom: '100px'
       }
-    }
+    };
     if (isFetching) {
       return (
         <div style={style.container}>

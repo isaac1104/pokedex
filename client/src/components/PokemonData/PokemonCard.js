@@ -9,12 +9,12 @@ class PokemonCard extends Component {
     const style = {
       card: {
         textAlign: 'center',
-        backgroundColor: '#F7FFF7'
+        backgroundColor: '#36393f'
       },
       image: {
         margin: 'auto'
       }
-    }
+    };
     const { data, fetchSelectedPokemonData } = this.props;
 
     return (
