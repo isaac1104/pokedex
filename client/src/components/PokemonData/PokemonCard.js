@@ -9,7 +9,7 @@ class PokemonCard extends Component {
     const style = {
       card: {
         textAlign: 'center',
-        backgroundColor: '#36393f'
+        backgroundColor: '#2f3136'
       },
       image: {
         margin: 'auto'
