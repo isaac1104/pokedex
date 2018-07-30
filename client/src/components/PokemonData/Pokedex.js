@@ -12,6 +12,11 @@ class Pokedex extends Component {
 
   renderStatsChart() {
     const { data } = this.props.selectedPokemonData;
+    const style = {
+      text: {
+        color: '#fff'
+      }
+    };
     return data.stats.map(pokemon => {
       return (
         <Col xs={24} sm={24} md={24} lg={12} xl={12} key={pokemon.stat.name}>
@@ -20,7 +25,7 @@ class Pokedex extends Component {
             showInfo={false}
             percent={(pokemon.base_stat / pokemon.max_stat) * 100}
           />
-          <h5>{`${pokemon.stat.name.toUpperCase()}: ${pokemon.base_stat}`}</h5>
+          <h5 style={style.text}>{`${pokemon.stat.name.toUpperCase()}: ${pokemon.base_stat}`}</h5>
         </Col>
       );
     });
