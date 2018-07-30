@@ -34,9 +34,17 @@ class Pokedex extends Component {
         margin: 'auto'
       },
       text: {
-        textAlign: 'center',
-        marginTop: '20px',
-        color: '#fff'
+        initialMsg: {
+          textAlign: 'center',
+          marginTop: '20px',
+          color: '#fff'
+        },
+        detail: {
+          color: '#fff'
+        },
+        type: {
+          color: '#F7FFF7'
+        }
       },
       image: {
         width: '60%',
@@ -59,7 +67,7 @@ class Pokedex extends Component {
       );
     }
     if (!data.id) {
-      return <h1 style={style.text}>Select a Pokemon for details</h1>
+      return <h1 style={style.text.initialMsg}>Select a Pokemon for details</h1>
     }
 
     return (
@@ -73,18 +81,18 @@ class Pokedex extends Component {
           />
         }
         actions={data.types.map(pokemon => {
-          return <h4 style={{ color: '#F7FFF7' }} key={pokemon.type.name}>{pokemon.type.name}</h4>
+          return <h4 style={style.text.type} key={pokemon.type.name}>{pokemon.type.name}</h4>
         })}
       >
         <Meta
-          title={<h1 style={{ color: '#1A535C' }}>{data.name}</h1>}
+          title={<h1 style={style.text.detail}>{data.name}</h1>}
           description={
             <Fragment>
               <Row gutter={16}>
                 {this.renderStatsChart()}
               </Row>
               <Row>
-                <h3 style={{ color: '#1A535C' }}>{data.height} Ft. <Divider type='vertical' /> {data.weight} Lbs.</h3>
+                <h3 style={style.text.detail}>{data.height} Ft. <Divider type='vertical' /> {data.weight} Lbs.</h3>
               </Row>
             </Fragment>
           }
