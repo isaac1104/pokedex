@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import SearchForm from '../Search/SearchForm';
 import { connect } from 'react-redux';
+import { FadeIn } from 'react-lazyload-fadein';
 import { filterPokemonData } from '../../actions';
 import { Card, Col, Divider, Row, Progress } from 'antd';
 const { Meta } = Card;
@@ -87,11 +88,16 @@ class Pokedex extends Component {
       <Card
         style={style.card.data}
         cover={
-          <img
-            src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${data.id}.png`}
-            style={style.image}
-            alt='pokemon'
-          />
+          <FadeIn height={150} duration={250}>
+            {onload => (
+              <img
+                src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${data.id}.png`}
+                style={style.image}
+                alt='pokemon'
+                onLoad={onload}
+              />
+            )}
+          </FadeIn>
         }
         actions={data.types.map(pokemon => {
           return <h4 style={style.text.type} key={pokemon.type.name}>{pokemon.type.name}</h4>
