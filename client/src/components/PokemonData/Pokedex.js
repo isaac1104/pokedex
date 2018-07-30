@@ -56,16 +56,22 @@ class Pokedex extends Component {
         margin: 'auto'
       },
       card: {
-        textAlign: 'center',
-        backgroundColor: '#36393f',
-        borderTop: 'none'
+        loading: {
+          textAlign: 'center',
+          backgroundColor: '#36393f',
+          border: 'none'
+        },
+        data: {
+          textAlign: 'center',
+          backgroundColor: '#36393f',
+          borderTop: 'none'
+        }
       }
     };
     if (isFetching) {
       return (
         <Card
-          style={style.card}
-          loading={true}
+          style={style.card.loading}
           cover={
             <img src='/images/pokeball.gif' alt='loader' style={style.spinner} />
           }
@@ -78,7 +84,7 @@ class Pokedex extends Component {
 
     return (
       <Card
-        style={style.card}
+        style={style.card.data}
         cover={
           <img
             src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${data.id}.png`}
