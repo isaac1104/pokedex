@@ -57,8 +57,7 @@ class Pokedex extends Component {
       },
       card: {
         textAlign: 'center',
-        backgroundColor: '#2f3136',
-        border: 'none'
+        backgroundColor: '#2f3136'
       }
     };
     if (isFetching) {
