@@ -36,7 +36,7 @@ class Pokedex extends Component {
       text: {
         textAlign: 'center',
         marginTop: '20px',
-        color: '#1A535C'
+        color: '#fff'
       },
       image: {
         width: '60%',
@@ -44,7 +44,7 @@ class Pokedex extends Component {
       },
       card: {
         textAlign: 'center',
-        backgroundColor: '#f0f2f5'
+        backgroundColor: '#36393f'
       }
     };
     if (isFetching) {

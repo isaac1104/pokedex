@@ -26,7 +26,7 @@ class PokemonData extends Component {
       pokedex: {
         position: 'sticky',
         top: 0,
-        backgroundColor: '#f0f2f5'
+        backgroundColor: '#36393f'
       },
       pokemonBox: {
         marginBottom: '100px'
