@@ -88,7 +88,7 @@ class Pokedex extends Component {
       <Card
         style={style.card.data}
         cover={
-          <FadeIn height={150} duration={250}>
+          <FadeIn height={400} duration={250}>
             {onload => (
               <img
                 src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${data.id}.png`}
