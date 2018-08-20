@@ -3,7 +3,7 @@ import SearchForm from '../Search/SearchForm';
 import { connect } from 'react-redux';
 import { FadeIn } from 'react-lazyload-fadein';
 import { filterPokemonData } from '../../actions';
-import { Card, Col, Divider, Row, Progress } from 'antd';
+import { Card, Col, Divider, Icon, Row, Progress } from 'antd';
 const { Meta } = Card;
 
 class Pokedex extends Component {
@@ -81,7 +81,7 @@ class Pokedex extends Component {
       );
     }
     if (!data.id) {
-      return <h1 style={style.text.initialMsg}>Select a Pokemon for details</h1>
+      return <h1 style={style.text.initialMsg}>Select a Pokemon for Details <Icon type='arrow-right' /></h1>
     }
 
     return (
