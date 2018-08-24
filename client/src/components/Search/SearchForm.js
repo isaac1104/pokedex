@@ -6,7 +6,6 @@ const SearchForm = props => {
   return (
     <Search
       onChange={props.handleSearch}
-      placeholder='search for a pokemon'
     />
   );
 }
