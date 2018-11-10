@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Card, Col } from 'antd';
 import { connect } from 'react-redux';
+import { SimpleImg, SimpleImgProvider } from 'react-simple-img';
 import { fetchSelectedPokemonData } from '../../actions';
 const { Meta } = Card;
 
@@ -24,11 +25,14 @@ class PokemonCard extends Component {
           style={style.card}
           onClick={() => fetchSelectedPokemonData(data.name)}
           cover={
-            <img
-              alt='pokemon'
-              src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${data.id}.png`}
-              style={style.image}
-            />
+            <SimpleImgProvider>
+              <SimpleImg
+                width={157}
+                height={157}
+                src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${data.id}.png`}
+                alt='poster'
+              />
+            </SimpleImgProvider>
           }
         >
           <Meta
