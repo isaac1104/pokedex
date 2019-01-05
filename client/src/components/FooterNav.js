@@ -14,7 +14,7 @@ const FooterNav = () => {
 
   return (
     <Footer style={style}>
-      PokeDex ©2018 by Isaac Kwon
+      PokeDex ©2019 by Isaac Kwon
       <Divider type='vertical' />
       <a href='https://github.com/isaac1104'>
         <Icon type='github' />
