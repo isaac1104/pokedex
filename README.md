@@ -1,4 +1,6 @@
-# ![pokedex](https://cdn.iconscout.com/icon/premium/png-256-thumb/pokedex-2-568492.png)  Pokedex
+![pokedex](https://cdn.iconscout.com/icon/premium/png-256-thumb/pokedex-2-568492.png)  
+
+# Pokedex
 
 <img width="1680" alt="screen shot 2018-07-30 at 7 38 58 pm" src="https://user-images.githubusercontent.com/28583016/43434385-47c994ce-9430-11e8-9191-eace9b13fb48.png">
 
