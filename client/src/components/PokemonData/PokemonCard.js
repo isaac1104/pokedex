@@ -20,27 +20,27 @@ class PokemonCard extends Component {
 
     return (
       <Col xs={24} sm={12} md={8} lg={6} xl={3}>
-          <Card
-            className='pokemon-card'
-            style={style.card}
-            onClick={() => fetchSelectedPokemonData(data.name)}
-            cover={
-              <LazyLoad
-                height={'100%'}
-                once
-              >
-                <img
-                  alt='pokemon'
-                  src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${data.id}.png`}
-                  style={style.image}
-                />
-              </LazyLoad>
-            }
+        <Card
+          className='pokemon-card'
+          style={style.card}
+          onClick={() => fetchSelectedPokemonData(data.name)}
+          cover={
+            <LazyLoad
+              height={'100%'}
+              once
             >
-            <Meta
-              title={data.name}
-            />
-          </Card>
+              <img
+                alt='pokemon'
+                src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${data.id}.png`}
+                style={style.image}
+              />
+            </LazyLoad>
+          }
+        >
+          <Meta
+            title={data.name}
+          />
+        </Card>
       </Col>
     );
   }
