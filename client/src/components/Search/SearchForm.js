@@ -13,7 +13,7 @@ class SearchForm extends Component {
       <Search
         {...input}
         autoComplete='off'
-        placeholder='Enter A Movie Title'
+        placeholder='Search for a Pokemon'
       />
     )
   };
