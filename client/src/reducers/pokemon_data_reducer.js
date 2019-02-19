@@ -1,4 +1,4 @@
-import { REQUEST_POKEMON_DATA, RECEIVE_POKEMON_DATA, FILTER_POKEMON_DATA } from '../actions/types';
+import { REQUEST_POKEMON_DATA, RECEIVE_POKEMON_DATA, FILTER_POKEMON_DATA, SORT_POKEMON_DATA } from '../actions/types';
 
 const INITIAL_STATE = {
   data: [],
@@ -31,6 +31,11 @@ function pokemonDataReducer(state = INITIAL_STATE, action) {
       return {
         ...state,
         filteredData: state.data.results.filter(pokemon => pokemon.name.includes(action.payload.toLowerCase()))
+      };
+    case SORT_POKEMON_DATA:
+      return {
+        ...state,
+        filteredData: [...state.filteredData].sort((a, b) => (a[action.payload] < b[action.payload] ? -1 : a[action.payload] > b[action.payload] : 1))
       };
     default:
       return state;
