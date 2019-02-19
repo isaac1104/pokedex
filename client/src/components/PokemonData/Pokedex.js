@@ -7,10 +7,6 @@ import { Card, Col, Divider, Icon, Row, Progress } from 'antd';
 const { Meta } = Card;
 
 class Pokedex extends Component {
-  handleSearch(event) {
-    this.props.filterPokemonData(event.target.value);
-  }
-
   renderStatsChart() {
     const { data } = this.props.selectedPokemonData;
     const style = {
@@ -123,7 +119,7 @@ class Pokedex extends Component {
   render() {
     return (
       <Fragment>
-        <SearchForm handleSearch={this.handleSearch.bind(this)} />
+        <SearchForm />
         {this.renderPokemonDetail()}
       </Fragment>
     );
