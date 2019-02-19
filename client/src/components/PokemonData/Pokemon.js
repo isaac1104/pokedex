@@ -15,18 +15,19 @@ class Pokemon extends Component {
   renderDropdown() {
     return (
       <Select
-        style={{ width: 120 }}
+        style={{ width: 160 }}
         placeholder='Sort By'
         onChange={value => this.props.sortPokemonData(value)}
       >
-        <Select.Option value='name'>Name (A - Z)</Select.Option>
-        <Select.Option value='id'>ID (1 - 151)</Select.Option>
+        <Select.Option value='alphabetically'>Name (A - Z)</Select.Option>
+        <Select.Option value='reverse-alphabetically'>Name (Z - A)</Select.Option>
+        <Select.Option value='id-ascending'>ID (Ascending)</Select.Option>
+        <Select.Option value='id-descending'>ID (Descending)</Select.Option>
       </Select>
     );
   }
 
   render() {
-    console.log(this.props.pokemonData);
     return (
       <Fragment>
         {this.renderDropdown()}

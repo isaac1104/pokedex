@@ -35,7 +35,17 @@ function pokemonDataReducer(state = INITIAL_STATE, action) {
     case SORT_POKEMON_DATA:
       return {
         ...state,
-        filteredData: [...state.filteredData].sort((a, b) => (a[action.payload] < b[action.payload] ? -1 : a[action.payload] > b[action.payload] : 1))
+        filteredData: [...state.filteredData].sort((a, b) => {
+          if (action.payload === 'alphabetically') {
+            return (a.name < b.name ? -1 : a.name > b.name : 1);
+          } else if (action.payload === 'reverse-alphabetically') {
+            return (a.name > b.name ? -1 : a.name < b.name : 1);
+          } else if (action.payload === 'id-ascending') {
+            return Number(a.id) - Number(b.id);
+          } else {
+            return Number(b.id) - Number(a.id);
+          }
+        })
       };
     default:
       return state;
