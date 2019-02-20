@@ -8,7 +8,7 @@ class SortDropdown extends Component {
   render() {
     return (
       <Select
-        style={{ width: 200 }}
+        style={{ width: 180 }}
         placeholder='Sort By'
         onChange={value => this.props.sortPokemonData(value)}
       >
