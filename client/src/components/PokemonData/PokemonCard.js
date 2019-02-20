@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Card, Col } from 'antd';
 import { connect } from 'react-redux';
-import LazyLoad from 'react-lazyload';
+// import LazyLoad from 'react-lazyload';
 import { fetchSelectedPokemonData } from '../../actions';
 const { Meta } = Card;
 
@@ -25,16 +25,16 @@ class PokemonCard extends Component {
           style={style.card}
           onClick={() => fetchSelectedPokemonData(data.name)}
           cover={
-            <LazyLoad
-              height={'100%'}
-              once
-            >
+            // <LazyLoad
+            //   height={'100%'}
+            //   once
+            // >
               <img
                 alt='pokemon'
                 src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${data.id}.png`}
                 style={style.image}
               />
-            </LazyLoad>
+            // </LazyLoad>
           }
         >
           <Meta
