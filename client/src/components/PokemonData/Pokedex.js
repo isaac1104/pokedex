@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import SearchForm from '../Search/SearchForm';
+import SortDropdown from '../SortDropdown';
 import { connect } from 'react-redux';
 import { FadeIn } from 'react-lazyload-fadein';
 import { filterPokemonData } from '../../actions';
@@ -119,7 +120,14 @@ class Pokedex extends Component {
   render() {
     return (
       <Fragment>
-        <SearchForm />
+        <Row>
+          <Col xs={24} sm={16} md={16} lg={16} xl={16}>
+            <SearchForm />
+          </Col>
+          <Col xs={24} sm={8} md={8} lg={8} xl={8}>
+            <SortDropdown />
+          </Col>
+        </Row>
         {this.renderPokemonDetail()}
       </Fragment>
     );
