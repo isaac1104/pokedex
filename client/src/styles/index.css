@@ -66,3 +66,22 @@ body {
 .anticon-search {
   color: #fff;
 }
+
+.ant-select-selection {
+  background-color: #202225;
+  color: #ffffff;
+  border-color: #4ecdc4;
+}
+
+.ant-select-dropdown-menu-item {
+  background-color: #36393f;
+  color: #ffffff;
+}
+
+.ant-select-dropdown-menu-item:hover {
+  color: #000000;
+}
+
+.ant-select-arrow {
+  color: #ffffff;
+}
