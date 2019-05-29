@@ -1,5 +1,5 @@
 import React from 'react';
-import { Divider, Icon, Layout } from 'antd';
+import { Divider, Layout } from 'antd';
 const { Footer } = Layout;
 
 const FooterNav = () => {
@@ -14,14 +14,14 @@ const FooterNav = () => {
 
   return (
     <Footer style={style}>
-      PokeDex ©2018 by Isaac Kwon
+      PokeDex ©2019 by Isaac Kwon
       <Divider type='vertical' />
       <a href='https://github.com/isaac1104'>
-        <Icon type='github' />
+        <i className='nes-icon github is-small' />
       </a>
       <Divider type='vertical' />
       <a href='https://www.linkedin.com/in/isaac-kwon/'>
-        <Icon type='linkedin' />
+        <i className='nes-icon linkedin is-small' />
       </a>
     </Footer>
   );
