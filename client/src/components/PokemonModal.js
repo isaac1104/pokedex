@@ -53,7 +53,7 @@ const styles = {
 class PokemonModal extends Component {
   renderModal() {
     const { modalVisibility: { visible }, togglePokemonModal, selectedPokemonData: { data, isFetching } } = this.props;
-    if (data.length !== 0) {
+    if (isFetching) {
       return (
         <Modal
           centered
@@ -62,47 +62,56 @@ class PokemonModal extends Component {
           onOk={togglePokemonModal}
           onCancel={togglePokemonModal}
         >
-          {isFetching ? (
-            <Card
-              style={styles.card.loading}
-              cover={
-                <img src='/images/pokeball.gif' alt='loader' style={styles.spinner} />
+          <Card
+            style={styles.card.loading}
+            cover={
+              <img src='/images/pokeball.gif' alt='loader' style={styles.spinner} />
+            }
+          />
+        </Modal>
+      );
+    }
+    if (data) {
+      return (
+        <Modal
+          centered
+          destroyOnClose
+          visible={visible}
+          onOk={togglePokemonModal}
+          onCancel={togglePokemonModal}
+        >
+          <Card
+            style={styles.card.data}
+            cover={
+              <FadeIn height={400} duration={250}>
+                {onload => (
+                  <img
+                    src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${data.id}.png`}
+                    style={styles.image}
+                    alt='pokemon'
+                    onLoad={onload}
+                  />
+                )}
+              </FadeIn>
+            }
+            actions={data.types.map(pokemon => {
+              return <h4 style={styles.text.type} key={pokemon.type.name}>{pokemon.type.name}</h4>
+            })}
+          >
+            <Meta
+              title={<h1 style={styles.text.detail}>{data.name}</h1>}
+              description={
+                <>
+                  <Row gutter={16}>
+                    {this.renderStatsChart(data.stats)}
+                  </Row>
+                  <Row>
+                    <h3 style={styles.text.detail}>{data.height} Ft. <Divider type='vertical' /> {data.weight} Lbs.</h3>
+                  </Row>
+                </>
               }
             />
-          ) : (
-            <Card
-              style={styles.card.data}
-              cover={
-                <FadeIn height={400} duration={250}>
-                  {onload => (
-                    <img
-                      src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${data.id}.png`}
-                      style={styles.image}
-                      alt='pokemon'
-                      onLoad={onload}
-                    />
-                  )}
-                </FadeIn>
-              }
-              actions={data.types.map(pokemon => {
-                return <h4 style={styles.text.type} key={pokemon.type.name}>{pokemon.type.name}</h4>
-              })}
-            >
-              <Meta
-                title={<h1 style={styles.text.detail}>{data.name}</h1>}
-                description={
-                  <>
-                    <Row gutter={16}>
-                      {this.renderStatsChart(data.stats)}
-                    </Row>
-                    <Row>
-                      <h3 style={styles.text.detail}>{data.height} Ft. <Divider type='vertical' /> {data.weight} Lbs.</h3>
-                    </Row>
-                  </>
-                }
-              />
-            </Card>
-          )}
+          </Card>
         </Modal>
       );
     }

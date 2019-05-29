@@ -1,7 +1,7 @@
 import { REQUEST_SELECTED_POKEMON_DATA, RECEIVE_SELECTED_POKEMON_DATA } from '../actions/types';
 
 const INITIAL_STATE = {
-  data: [],
+  data: '',
   isFetching: false
 }
 
