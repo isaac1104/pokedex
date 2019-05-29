@@ -38,14 +38,11 @@ const styles = {
   card: {
     loading: {
       textAlign: 'center',
-      backgroundColor: '#36393f',
-      border: 'none'
+      backgroundColor: '#36393f'
     },
     data: {
       textAlign: 'center',
-      backgroundColor: '#36393f',
-      borderTop: 'none',
-      borderLeft: 'none'
+      backgroundColor: '#36393f'
     }
   }
 };
