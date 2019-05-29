@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Card, Col } from 'antd';
 import { connect } from 'react-redux';
-import { fetchSelectedPokemonData } from '../../actions';
+import { fetchSelectedPokemonData, togglePokemonModal } from '../../actions';
 const { Meta } = Card;
 
 class PokemonCard extends Component {
@@ -15,14 +15,17 @@ class PokemonCard extends Component {
         margin: 'auto'
       }
     };
-    const { data, fetchSelectedPokemonData } = this.props;
+    const { data, fetchSelectedPokemonData, togglePokemonModal } = this.props;
 
     return (
       <Col xs={24} sm={12} md={8} lg={6} xl={3}>
         <Card
           className='pokemon-card'
           style={{ ...style.card, backgroundImage: `url(https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${data.id}.png)` }}
-          onClick={() => fetchSelectedPokemonData(data.name)}
+          onClick={() => {
+            fetchSelectedPokemonData(data.name);
+            togglePokemonModal();
+          }}
         >
           <Meta
             className='pokemon-name'
@@ -34,4 +37,4 @@ class PokemonCard extends Component {
   }
 }
 
-export default connect(null, { fetchSelectedPokemonData })(PokemonCard);
+export default connect(null, { fetchSelectedPokemonData, togglePokemonModal })(PokemonCard);

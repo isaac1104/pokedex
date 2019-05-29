@@ -104,3 +104,15 @@ body {
 .ant-select-arrow {
   color: #ffffff;
 }
+
+.ant-modal-body {
+  padding: 0px !important;
+}
+
+.ant-modal-footer {
+  display: none !important;
+}
+
+.ant-modal-close-x {
+  color: #ffffff !important;
+}

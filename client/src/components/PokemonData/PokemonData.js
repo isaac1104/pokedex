@@ -3,7 +3,6 @@ import * as actions from '../../actions';
 import { connect } from 'react-redux';
 import { Icon, Spin, Row, Col } from 'antd';
 import Pokemon from './Pokemon';
-import Pokedex from './Pokedex';
 import SearchForm from '../Search/SearchForm';
 import SortDropdown from '../SortDropdown';
 

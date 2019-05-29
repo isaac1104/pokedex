@@ -3,6 +3,7 @@ import PokemonCard from './PokemonCard';
 import { connect } from 'react-redux';
 import { Row } from 'antd';
 import { sortPokemonData } from '../../actions';
+import PokemonModal from '../PokemonModal';
 
 class Pokemon extends Component {
   renderPokemonCard() {
@@ -16,6 +17,7 @@ class Pokemon extends Component {
     return (
       <Row>
         {this.renderPokemonCard()}
+        <PokemonModal />
       </Row>
     );
   }
