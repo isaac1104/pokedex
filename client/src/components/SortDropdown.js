@@ -12,10 +12,10 @@ class SortDropdown extends Component {
         placeholder='Sort By'
         onChange={value => this.props.sortPokemonData(value)}
       >
-        <Option value='alphabetically'>Name (A - Z)</Option>
-        <Option value='reverse-alphabetically'>Name (Z - A)</Option>
-        <Option value='id-ascending'>ID (Ascending)</Option>
-        <Option value='id-descending'>ID (Descending)</Option>
+        <Option value='alphabetically'>A - Z</Option>
+        <Option value='reverse-alphabetically'>Z - A</Option>
+        <Option value='id-ascending'>ID ↑</Option>
+        <Option value='id-descending'>ID ↓</Option>
       </Select>
     );
   }
