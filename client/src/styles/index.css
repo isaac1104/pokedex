@@ -29,7 +29,6 @@ body {
 .pokemon-card:hover {
   background-color: #4ECDC4 !important;
   border: 1px solid #e8e8e8;
-  cursor: pointer;
 }
 
 .pokemon-card:hover .ant-card-meta-title {
