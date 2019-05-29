@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import * as actions from '../../actions';
 import { connect } from 'react-redux';
-import { Col, Icon, Row, Spin } from 'antd';
+import { Icon, Spin } from 'antd';
 import Pokemon from './Pokemon';
 import Pokedex from './Pokedex';
 
@@ -29,7 +29,7 @@ class PokemonData extends Component {
         backgroundColor: '#36393f'
       },
       pokemonBox: {
-        marginBottom: '100px'
+        marginBottom: '6.5em'
       }
     };
     if (isFetching) {
@@ -49,14 +49,9 @@ class PokemonData extends Component {
       );
     } else {
       return (
-        <Row>
-          <Col xs={15} sm={14} md={8} lg={10} xl={8} style={style.pokedex}>
-            <Pokedex />
-          </Col>
-          <Col xs={9} sm={10} md={16} lg={14} xl={16} style={style.pokemonBox}>
-            <Pokemon />
-          </Col>
-        </Row>
+        <div style={style.pokemonBox}>
+          <Pokemon />
+        </div>
       );
     }
   }
