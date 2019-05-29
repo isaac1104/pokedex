@@ -1,9 +1,11 @@
 import React, { Component, Fragment } from 'react';
 import * as actions from '../../actions';
 import { connect } from 'react-redux';
-import { Icon, Spin } from 'antd';
+import { Icon, Spin, Row, Col } from 'antd';
 import Pokemon from './Pokemon';
 import Pokedex from './Pokedex';
+import SearchForm from '../Search/SearchForm';
+import SortDropdown from '../SortDropdown';
 
 class PokemonData extends Component {
   componentDidMount() {
@@ -50,6 +52,14 @@ class PokemonData extends Component {
     } else {
       return (
         <div style={style.pokemonBox}>
+          <Row>
+            <Col xs={24} sm={16} md={16} lg={16} xl={16}>
+              <SearchForm />
+            </Col>
+            <Col xs={24} sm={8} md={8} lg={8} xl={8}>
+              <SortDropdown />
+            </Col>
+          </Row>
           <Pokemon />
         </div>
       );
