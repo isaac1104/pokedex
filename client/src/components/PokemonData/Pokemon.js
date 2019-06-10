@@ -5,6 +5,12 @@ import { Row } from 'antd';
 import { sortPokemonData } from '../../actions';
 import PokemonModal from '../PokemonModal';
 
+const styles = {
+  container: {
+    zoom: 0.7
+  }
+};
+
 class Pokemon extends Component {
   renderPokemonCard() {
     const { filteredData } = this.props.pokemonData;
@@ -15,7 +21,7 @@ class Pokemon extends Component {
 
   render() {
     return (
-      <Row>
+      <Row style={styles.container}>
         {this.renderPokemonCard()}
         <PokemonModal />
       </Row>
